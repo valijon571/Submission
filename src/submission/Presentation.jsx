@@ -1,10 +1,32 @@
-import React from "react";
+// import React from "react";
 import { TbPointFilled } from "react-icons/tb";
 import { FiUsers } from "react-icons/fi";
 import { PiFileTextBold } from "react-icons/pi";
 import { CssStyle } from "./CssStyle";
+import React, { useRef } from "react";
 
 const Presentation = () => {
+  const firstBox = useRef(null);
+  const secondBox = useRef(null);
+  const thirdBox = useRef(null);
+  const fourthBox = useRef(null);
+  const fiveBox = useRef(null);
+
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData("text/plain", e.target.id);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e, targetBox) => {
+    e.preventDefault();
+    const data = e.dataTransfer.getData("text/plain");
+    const draggedElement = document.getElementById(data);
+    targetBox.current.appendChild(draggedElement);
+  };
+
   return (
     <>
       <CssStyle>
@@ -20,7 +42,7 @@ const Presentation = () => {
               <span className="number">22</span>
             </h4>
             <div className="main_cards_cards">
-              {/* ==============================Новые====================== */}
+              {/* ==============================Новые  1====================== */}
 
               <div className="cards">
                 <header className="card_header">
@@ -32,8 +54,19 @@ const Presentation = () => {
                     <span className="number">4</span>
                   </h4>
                 </header>
-                <div className="items">
-                  <div className="card">
+                <div
+                  className="items"
+                  id="first"
+                  ref={firstBox}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, firstBox)}
+                >
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_1"
+                  >
                     <div className="card_main">
                       <h5>UI/UX дизайнер</h5>
                       <p>Отдел разработки мобильного...</p>
@@ -61,7 +94,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_2"
+                  >
                     <div className="card_main">
                       <h5>Маркетолог</h5>
                       <p>Отдел маркетинга</p>
@@ -88,8 +126,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_3"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -116,8 +159,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_4"
+                  >
                     <div className="card_main">
                       <h5>UI/UX дизайнер</h5>
                       <p>Отдел разработки мобильного...</p>
@@ -148,7 +196,7 @@ const Presentation = () => {
                 </div>
               </div>
 
-              {/* ===============================Текущие================== */}
+              {/* ===============================Текущие   2================== */}
               <div className="cards">
                 <header className="card_header">
                   <h4 className="card_header_weak">
@@ -159,8 +207,19 @@ const Presentation = () => {
                     <span className="number">7</span>
                   </h4>
                 </header>
-                <div className="items">
-                  <div className="card">
+                <div
+                  className="items"
+                  id="second"
+                  ref={secondBox}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, secondBox)}
+                >
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_5"
+                  >
                     <div className="card_main">
                       <h5>PHP Developer</h5>
                       <p>Housekeepers</p>
@@ -188,7 +247,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_6"
+                  >
                     <div className="card_main">
                       <h5>Freshers</h5>
                       <p>Finance</p>
@@ -216,7 +280,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_7"
+                  >
                     <div className="card_main">
                       <h5>UI UX Designer</h5>
                       <p>Management</p>
@@ -244,7 +313,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_8"
+                  >
                     <div className="card_main">
                       <h5>Joomla Developer</h5>
                       <p>Accounting</p>
@@ -271,8 +345,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_9"
+                  >
                     <div className="card_main">
                       <h5>Python Developer</h5>
                       <p>Laundry</p>
@@ -299,8 +378,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_10"
+                  >
                     <div className="card_main">
                       <h5>Freshers</h5>
                       <p>Finance</p>
@@ -328,7 +412,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_11"
+                  >
                     <div className="card_main">
                       <h5>Freshers</h5>
                       <p>Finance</p>
@@ -359,7 +448,7 @@ const Presentation = () => {
                 </div>
               </div>
 
-              {/* ===============================Закрытые================== */}
+              {/* ===============================Закрытые   3================== */}
               <div className="cards">
                 <header className="card_header">
                   <h4 className="card_header_weak">
@@ -370,7 +459,13 @@ const Presentation = () => {
                     <span className="number">0</span>
                   </h4>
                 </header>
-                <div className="items">
+                <div
+                  className="items"
+                  id="third"
+                  ref={thirdBox}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, thirdBox)}
+                >
                   <div className="addfiles">
                     <img src="./image/Add_Files.png" />
                     <p>Если есть подходящие заявки, перетащите их сюда 🤓</p>
@@ -378,7 +473,7 @@ const Presentation = () => {
                 </div>
               </div>
 
-              {/* ============================Архив======================== */}
+              {/* ============================Архив  4======================== */}
               <div className="cards">
                 <header className="card_header">
                   <h4 className="card_header_weak">
@@ -389,8 +484,19 @@ const Presentation = () => {
                     <span className="number">3</span>
                   </h4>
                 </header>
-                <div className="items">
-                  <div className="card">
+                <div
+                  className="items"
+                  id="fourth"
+                  ref={fourthBox}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, fourthBox)}
+                >
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_12"
+                  >
                     <div className="card_main">
                       <h5>UX Architect</h5>
                       <p>Housekeeping management</p>
@@ -417,8 +523,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_13"
+                  >
                     <div className="card_main">
                       <h5>Human Resource</h5>
                       <p>Operations</p>
@@ -445,8 +556,13 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
-                  <div className="card">
+                  </div>
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_14"
+                  >
                     <div className="card_main">
                       <h5>Python Developer</h5>
                       <p>Restaurant Management</p>
@@ -473,11 +589,11 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                       <TbPointFilled className="pointfilled" />
                     </div>
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
 
-              {/* ============================Удаленные==================== */}
+              {/* ============================Удаленные   5==================== */}
               <div className="cards">
                 <header className="card_header">
                   <h4 className="card_header_weak">
@@ -488,8 +604,19 @@ const Presentation = () => {
                     <span className="number">8</span>
                   </h4>
                 </header>
-                <div className="items">
-                  <div className="card">
+                <div
+                  className="items"
+                  id="five"
+                  ref={fiveBox}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, fiveBox)}
+                >
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_15"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -517,7 +644,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_16"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -545,7 +677,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_17"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -573,7 +710,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_18"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -601,7 +743,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_19"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -629,7 +776,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_20"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -657,7 +809,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_21"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>
@@ -685,7 +842,12 @@ const Presentation = () => {
                       <TbPointFilled className="pointfilled" />
                     </div>
                   </div>
-                  <div className="card">
+                  <div
+                    className="card"
+                    draggable="true"
+                    onDragStart={handleDragStart}
+                    id="unique_id_22"
+                  >
                     <div className="card_main">
                       <h5>Менеджер по продажам</h5>
                       <p>Отдел продаж</p>

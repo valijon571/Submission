@@ -124,8 +124,7 @@ export const CssStyle = styled.div`
               width: 95%;
               display: flex;
               justify-content: space-between;
-              /* max-width: 72%; */
-              /* height: 11%; */
+
               margin-bottom: 10px;
               border-radius: 4px;
               background: #fff;
@@ -144,8 +143,6 @@ export const CssStyle = styled.div`
                   font-style: normal;
                   font-weight: 600;
                   line-height: normal;
-                  /* width: 186px; */
-                  /* height: 16px; */
                   flex-shrink: 0;
                   margin: 0px;
                 }
@@ -174,7 +171,6 @@ export const CssStyle = styled.div`
                     font-weight: 500;
                     line-height: normal;
                     margin: 0px;
-                    /* margin: 4px 8px; */
                     border-radius: 4px;
                     background: #f6f2ff;
                     border-radius: 4px;
@@ -279,12 +275,7 @@ export const CssStyle = styled.div`
                 width: 25px;
                 height: 20px;
                 display: flex;
-                /* gap: 2px; */
                 margin: 12px 12px;
-                /* flex-shrink: 0; */
-                /* border-radius: 4px; */
-                /* background: #FFF; */
-                /* box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.15) inset, 0px 2px 0px 0px rgba(0, 0, 0, 0.05) inset; */
                 flex-direction: column;
                 flex-wrap: nowrap;
                 align-items: flex-end;
@@ -296,8 +287,6 @@ export const CssStyle = styled.div`
               }
             }
           }
-
-          /* } */
         }
       }
     }
